@@ -21,13 +21,17 @@ const NavbarLink: React.FC<{
 export const Navbar = () => {
   const { state } = useContext(CartContext);
   const cartItemsCount = state.cartItems.length;
+  const { user, isAuthenticated } = useAuth0();
+  const isAdmin = user ? user['https://your-namespace.com/roles'].includes('admin') : false; // Asegúrate de que la ruta sea correcta para tu configuración
+
+  console.log('User object:', user); // Esto imprimirá el objeto de usuario en la consola
 
   return (
     <nav tw="bg-white fixed top-0 w-full flex justify-center transition-all gap-5 py-5 border-b border-slate-200">
       <NavbarLink href="/">Home</NavbarLink>
       <NavbarLink href="/games">Games</NavbarLink>
       <NavbarLink href="/cart">Cart ({cartItemsCount})</NavbarLink>
-      <NavbarLink href="/admin">Admin</NavbarLink>
+      {isAuthenticated && isAdmin && <NavbarLink href="/admin">Admin</NavbarLink>} {/* Mostrar enlace de administración solo si está autenticado y es administrador */}
       <Auth0Menu />
     </nav>
   );

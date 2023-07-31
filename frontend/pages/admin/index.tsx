@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { redirect } from "react-router-dom";
-import { API } from '../../lib/api/api_main';
-import { GameInterface } from '@/types/game';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { useAuth0 } from "@auth0/auth0-react";
+import { GameInterface } from '@/types/game';
+import { API } from '../../lib/api/api_main'; // Asegúrate de importar correctamente la API
 
 const Admin = () => {
+  const { user, isLoading, isAuthenticated } = useAuth0();
   const router = useRouter();
-  
- 
-
   const [games, setGames] = useState<GameInterface[]>([]);
+
   const [game, setGame] = useState<Partial<GameInterface>>({
     title: '',
     description: '',
@@ -20,6 +19,13 @@ const Admin = () => {
     video: '',
     genre: '',
   });
+
+  useEffect(() => {
+    // Si está autenticado pero no tiene el rol de admin, redirige
+    if (isAuthenticated && (!user || !user['https://your-namespace.com/roles'] || !user['https://your-namespace.com/roles'].includes('admin'))) {
+      router.push('/not');
+    }
+  }, [isLoading, isAuthenticated, user]);
 
   useEffect(() => {
     fetchGames();
