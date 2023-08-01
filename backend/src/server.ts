@@ -16,6 +16,7 @@ const server = fastify({
 
 server.register(mainApp);
 
-server.listen({ port: PORT }, (error, address) => {
+server.listen({ port: PORT, host: '0.0.0.0' }, (error, address) => {
   if (error) throw error;
 });
+
