@@ -6,7 +6,6 @@ import tw from "twin.macro";
 
 export const Auth0Menu = () => {
   const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
-  console.log('Is authenticated:', isAuthenticated, user);
   return (
     <div tw="flex gap-2 justify-center items-center">
       <button

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth0 } from "@auth0/auth0-react";
 import { GameInterface } from '@/types/game';
-import { API } from '../../lib/api/api_main'; // Asegúrate de importar correctamente la API
+import { API } from '../../lib/api/api_main'; 
 
 const Admin = () => {
   const { user, isLoading, isAuthenticated } = useAuth0();
@@ -21,13 +21,6 @@ const Admin = () => {
   });
 
   useEffect(() => {
-    // Si está autenticado pero no tiene el rol de admin, redirige
-    if (isAuthenticated && (!user || !user['https://your-namespace.com/roles'] || !user['https://your-namespace.com/roles'].includes('admin'))) {
-      router.push('/not');
-    }
-  }, [isLoading, isAuthenticated, user]);
-
-  useEffect(() => {
     fetchGames();
   }, []);
 
@@ -42,14 +35,7 @@ const Admin = () => {
 
   const handleAddGame = async () => {
     try {
-      if (game.releaseDate && game.releaseDate.match(/^\d{2}-\d{2}-\d{4}$/)) {
-        const releaseDateParts = game.releaseDate.split('-');
-        const releaseDate = new Date(Number(releaseDateParts[2]), Number(releaseDateParts[1]) - 1, Number(releaseDateParts[0]));
-        game.releaseDate = releaseDate.toISOString();
-      } else {
-        console.error('Invalid release date format');
-        return;
-      }
+      
 
       if (!game.title || !game.description || !game.price || !game.developer || !game.genre) {
         console.error('Missing required fields');
@@ -103,11 +89,11 @@ const Admin = () => {
         return (
           <div key={game._id} className="flex p-2 border-b items-start">
             <div>
-              <h2 className="text-xl mb-2">{game.title}</h2> {/* Margen inferior para separar el título de la imagen */}
+              <h2 className="text-xl mb-2">{game.title}</h2> 
               <img src={game.img} alt={game.title} style={{ width: '200px', height: '250px' }} />
             </div>
             <div className="ml-5 mt-8"> 
-              <div className="flex-grow"> {/* Crecimiento flexible para empujar el botón hacia abajo */}
+              <div className="flex-grow"> 
                 <p><strong>Description:</strong> {game.description}</p>
                 <p><strong>Price:</strong> {game.price}</p>
                 <p><strong>Release Date:</strong> {game.releaseDate}</p>

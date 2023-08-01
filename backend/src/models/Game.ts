@@ -6,9 +6,9 @@ export interface GameInterface extends Document {
   price: number;
   img: string;
   developer: string;
-  releaseDate: Date;
+  releaseDate: string;
   genre: string;
-  video: string; // Agregar este campo
+  video: string; 
 }
 
 const schema = new Schema(
@@ -18,9 +18,9 @@ const schema = new Schema(
     price: { type: Number, required: true },
     img: { type: String, required: true },
     developer: { type: String, required: true },
-    releaseDate: { type: Date, required: true },
+    releaseDate: { type: String, required: true },
     genre: { type: String, required: true },
-    video: { type: String }, // Agregar este campo
+    video: { type: String }, 
   },
   { timestamps: true }
 );

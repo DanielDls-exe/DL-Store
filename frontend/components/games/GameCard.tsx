@@ -46,9 +46,8 @@ export const GameCard: React.FC<{ game: GameInterface }> = ({ game }) => {
   const router = useRouter();
 
   const handleAddToCart = () => {
-    console.log('Adding to cart:', game); // Añadir esta línea
+    console.log('Adding to cart:', game); 
     dispatch({ type: 'ADD_ITEM', item: game });
-    router.push('/cart');
   };
   
 
@@ -82,7 +81,7 @@ export const GameCard: React.FC<{ game: GameInterface }> = ({ game }) => {
             <span className={classes.bold}>Price:</span> ${price.toFixed(2)}
           </Typography>
           <Typography variant="subtitle2">
-            <span className={classes.bold}>Genre:</span> {genre} {/* Aquí se muestra el género */}
+            <span className={classes.bold}>Genre:</span> {genre} 
           </Typography>
         </CardContent>
       </CardActionArea>

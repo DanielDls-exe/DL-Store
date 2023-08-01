@@ -9,7 +9,7 @@ const createGame = async () => {
     price: 19.99,
     img: "https://upload.wikimedia.org/wikipedia/en/6/69/Battlefield_3_Game_Cover.jpg",
     developer: "EA DICE",
-    releaseDate: new Date('2011-10-25'),
+    releaseDate: '2011-10-25',
     genre: "First-person shooter",
     video: "https://www.youtube.com/embed/O7vJMYMX7AM",
   };

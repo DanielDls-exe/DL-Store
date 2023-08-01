@@ -1,10 +1,14 @@
 import "/public/globals.css";
 import { Layout } from "@/components/base/Layout";
 import { Auth0Provider } from "@auth0/auth0-react";
-import { CartProvider } from '@/lib/context/CartContext'; // Importar el CartProvider
+import { CartProvider } from '@/lib/context/CartContext'; 
+import {Cart} from './../components/cart/Cart'; 
+import { useState } from 'react';
 
 const MyApp = ({ Component, pageProps }) => {
   let rewindow;
+
+  const [isCartOpen, setIsCartOpen] = useState(false); 
 
   if (typeof window !== "undefined") {
     rewindow = window.location.origin;
@@ -18,7 +22,8 @@ const MyApp = ({ Component, pageProps }) => {
         redirect_uri: rewindow,
       }}>
       <CartProvider> 
-        <Layout>
+        <Layout setIsCartOpen={setIsCartOpen}> 
+          <Cart open={isCartOpen} setOpen={setIsCartOpen} /> 
           <Component {...pageProps} />
         </Layout>
       </CartProvider> 
@@ -27,4 +32,3 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 export default MyApp;
-

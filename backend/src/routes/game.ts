@@ -24,7 +24,7 @@ export const GamePlugin: FastifyPluginAsync = async (server) => {
       description: string; 
       genre: string;
       price: number; 
-      releaseDate: Date;
+      releaseDate: string;
       developer: string;
       img: string;
       video: string;
