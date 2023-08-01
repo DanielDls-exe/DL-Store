@@ -39,7 +39,8 @@ Si tienes Docker instalado, puedes ejecutar el proyecto usando Docker Compose:
 1. Clona el repositorio: `git clone https://github.com/DanielDls-exe/DL-Store.git`
 2. Navega a la carpeta del proyecto: `cd DL-Store`
 3. Ejecuta Docker Compose: `docker-compose up`
-4. Abre tu navegador y visita `http://localhost:8080` para acceder a la aplicación.
+4. Abre tu navegador y visita `http://localhost:3000` para acceder al frontend.
+5. Abre tu navegador y visita `http://localhost:4500` para acceder al backend.
 
 ### Sin Docker (Usando Yarn)
 
@@ -50,14 +51,14 @@ Si prefieres no usar Docker, puedes ejecutar el proyecto con Yarn:
 1. Navega a la carpeta del backend: `cd backend`
 2. Instala las dependencias: `yarn install`
 3. Ejecuta el servidor: `yarn dev`
-4. El backend estará disponible en `http://localhost:3000`
+4. El backend estará disponible en `http://localhost:4500`
 
 #### Frontend
 
 1. Navega a la carpeta del frontend: `cd frontend`
 2. Instala las dependencias: `yarn install`
 3. Ejecuta la aplicación: `yarn dev`
-4. Abre tu navegador y visita `http://localhost:8080` para acceder a la aplicación.
+4. Abre tu navegador y visita `http://localhost:3000` para acceder a la aplicación.
 
 <br/>
 <br/>
