@@ -1,18 +1,11 @@
 # DL-Store
 
-<p align="center">
-    <img src="./public/githubback.png" alt="DL-Store Background" width="700"/>
-</p>
-
-<br/>
-<br/>
-
 ## **✦ Preview de la Tienda** 🚀
 
 ---
 
 <p align="center">
-    <img src="./public/github-gif.gif" alt="DL-Store" width="800"/>
+    <img src="img/preview.png" alt="DL-Store" width="800"/>
 </p>
 
 <br/>
