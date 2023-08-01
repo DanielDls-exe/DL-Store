@@ -23,7 +23,8 @@ DL-Store es una tienda en línea de videojuegos. Con una interfaz amigable y fá
 
 - **Explorar Juegos**: Navega por una amplia selección de juegos en nuestro carrusel interactivo.
 - **Detalles del Juego**: Haz clic en un juego para ver más detalles y opciones de compra.
-- **Carrito de Compras**: Agrega juegos a tu carrito y procede al pago de manera segura.
+- **Carrito de Compras**: Agrega juegos a tu carrito.
+- **Panel de Admin**: Agrega nuevos videojuegos a la pagina y elimina los actuales.
 
 <br/>
 <br/>
