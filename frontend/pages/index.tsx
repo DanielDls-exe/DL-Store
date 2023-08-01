@@ -15,12 +15,12 @@ const Page = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true, // 
+    autoplay: true, 
     autoplaySpeed: 2000, 
   };
 
-  const list = useGamesList(); 
-
+  const list = useGamesList();
+  console.log("List from useGamesList:", list);
   const slides = [];
   for (let i = 0; i < list.length; i += GAMES_PER_SLIDE) {
     slides.push(list.slice(i, i + GAMES_PER_SLIDE));

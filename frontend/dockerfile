@@ -1,0 +1,20 @@
+# Usar una imagen base de Node.js
+FROM node:14
+
+# Establecer el directorio de trabajo
+WORKDIR /usr/src/app
+
+# Copiar los archivos del proyecto
+COPY . .
+
+# Instalar Yarn
+RUN npm install -g yarn
+
+# Instalar las dependencias con Yarn
+RUN yarn install
+
+# Exponer el puerto que utiliza tu aplicación (ajusta según tu configuración)
+EXPOSE 8080
+
+# Comando para iniciar la aplicación con Yarn
+CMD ["yarn", "dev"]
